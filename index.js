@@ -5,11 +5,10 @@ const lineSetting = {
     channelSecret: '8ce86563f45b99dedc137f7a984ca9ea',
     channelAccessToken: '85Bj12LVNLWtyDXRenIqMoR7ue6dOLJdOJ9UZDTZI7oWMDdwMKEG/Q7+jr10YdqVrr9EehJemL3mZ+Mq8hFZwMQutm4EgK4L1Iv6XCg82kGddIwOrInwH2czLiPEwO/VmnihJ03sXW+mDTUW9YKeXAdB04t89/1O/w1cDnyilFU='
 }
-
+const bot = linebot(lineSetting);
 const app = express();
 const linebotParser = bot.parser();
 app.post('/', linebotParser);
-var bot = linebot(lineSetting);
 bot.on('message', function (event) {
     // event.message.text是使用者傳給bot的訊息
     // 使用event.reply(要回傳的訊息)方法可將訊息回傳給使用者
