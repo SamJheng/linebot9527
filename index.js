@@ -20,6 +20,13 @@ bot.on('message', function (event) {
         console.log(error);
     });
 });
+setTimeout(function () {
+    var userId = 'U482763170d993f5baf750dbdd784630a';
+    var sendMsg = "push hands up ";
+    bot.push(userId, [sendMsg]);
+    console.log('userId: ' + userId);
+    console.log('send: ' + sendMsg);
+}, 3000);
 //因為 express 預設走 port 3000，而 heroku 上預設卻不是，要透過下列程式轉換
 var server = app.listen(process.env.PORT || 8080, function () {
     var port = server.address().port;
